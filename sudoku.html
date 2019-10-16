@@ -4,8 +4,13 @@
 <head>
   <link rel="stylesheet" type="text/css" href="sudoku.css" />
   <meta charset="utf-8">
-  <script src="sudoku.js"></script>
+  <!-- 引入模块 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="play.js"></script>
+  <script src="pageInit.js"></script>
+  <script src="judge.js"></script>
+  <script src="generateSudoku.js"></script>
+  <script src="clock.js"></script>
   
   <title>Sudoku</title>
   
@@ -14,7 +19,7 @@
 <body>      
   <p id="title-name" onmouseover="style.color='#f4511e'"
   onmouseout="style.color='black'">Sudoku <br>&nbsp; Game</p>
-
+  <!-- 按钮 -->
   <div id="buttons">
     
     <button id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="startNew()"><span>新游戏</span></button>
@@ -34,7 +39,7 @@
     <button  id="button2" class="submitbtn" onclick="notHave()"><span>查看排名</span></button>
     <button  id="button3" class="submitbtn" onclick="stop()"><span>暂停</span></button>
   </div>
-
+  <!-- 九宫盘 -->
   <div id="container">
     <div id="chess-board"></div>
   </div>
@@ -46,18 +51,18 @@
       alert("尚未开通此功能");
     }
   </script>
-
+  <!-- 测试 -->
   <p id="demo0"></p>
   <p id="demo"></p>
   <p id="demo2"></p>
   <p id="demo3"></p>
 
-
+<!-- 初始化 -->
 <script>
   initializePage();
   init();
 </script>
-
+<!-- 界面特效 -->
 <script src="canvas-nest.js-master/dist/canvas-nest.js"></script>
 <script src="click.js"></script>
 </body>
