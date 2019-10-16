@@ -1,0 +1,64 @@
+<!-- MBJ -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="sudoku.css" />
+  <meta charset="utf-8">
+  <script src="sudoku.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <title>Sudoku</title>
+  
+</head>
+
+<body>      
+  <p id="title-name" onmouseover="style.color='#f4511e'"
+  onmouseout="style.color='black'">Sudoku <br>&nbsp; Game</p>
+
+  <div id="buttons">
+    
+    <button id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="startNew()"><span>新游戏</span></button>
+    <form id="inner_btn" action="" method="POST" onchange="getDifficulty()">
+      <select id="diff_form" name="difficulty">
+        <option value="Easy">Easy</option>
+        <option value="Medium" selected>Medium</option>
+        <option value="Hard">Hard</option>
+        <option value="Evil">Evil</option>
+      </select>
+    </form>
+    <button id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="checkResult()"><span>提交</span></button>
+    <button  id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="reset()"><span>重置</span></button>
+    <button  id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="getAnswer()"><span>答案</span></button>
+
+    <button  id="button1" class="submitbtn" onclick="notHave()"><span>登录</span></button>
+    <button  id="button2" class="submitbtn" onclick="notHave()"><span>查看排名</span></button>
+    <button  id="button3" class="submitbtn" onclick="stop()"><span>暂停</span></button>
+  </div>
+
+  <div id="container">
+    <div id="chess-board"></div>
+  </div>
+
+  <p id="timetext"></p>
+
+  <script>
+    function notHave(){
+      alert("尚未开通此功能");
+    }
+  </script>
+
+  <p id="demo0"></p>
+  <p id="demo"></p>
+  <p id="demo2"></p>
+  <p id="demo3"></p>
+
+
+<script>
+  initializePage();
+  init();
+</script>
+
+<script src="canvas-nest.js-master/dist/canvas-nest.js"></script>
+<script src="click.js"></script>
+</body>
+</html>
