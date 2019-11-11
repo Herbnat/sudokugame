@@ -1,72 +1,77 @@
 <!-- MBJ -->
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link rel="stylesheet" type="text/css" href="sudoku.css" />
-  <meta charset="utf-8">
-  <!-- 引入模块 -->
-  <script src="jquery.min.js"></script>
-  <script src="play.js"></script>
-  <script src="pageInit.js"></script>
-  <script src="judge.js"></script>
-  <script src="generateSudoku.js"></script>
-  <script src="clock.js"></script>
-  
-  <title>Sudoku</title>
-  
+    <link rel="stylesheet" type="text/css" href="sudoku.css" />
+    <meta charset="utf-8">
+    <!-- 引入模块 -->
+    <script src="jquery.min.js"></script>
+    <script src="play.js"></script>
+    <script src="pageInit.js"></script>
+    <script src="judge.js"></script>
+    <script src="generateSudoku.js"></script>
+    <script src="clock.js"></script>
+
+    <title>Sudoku</title>
+
 </head>
 
-<body>      
-  <p id="title-name" onmouseover="style.color='#f4511e'"
-  onmouseout="style.color='black'">Sudoku <br>&nbsp; Game</p>
-  <!-- 按钮 -->
-  <div id="buttons">
-    
-    <button id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="startNew()"><span>新游戏</span></button>
-    <form id="inner_btn" action="" method="POST" onchange="getDifficulty()">
-      <select id="diff_form" name="difficulty">
-        <option value="Easy">Easy</option>
-        <option value="Medium" selected>Medium</option>
-        <option value="Hard">Hard</option>
-        <option value="Evil">Evil</option>
-      </select>
-    </form>
-    <button id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="checkResult()"><span>提交</span></button>
-    <button  id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="reset()"><span>重置</span></button>
-    <button  id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="getAnswer()"><span>答案</span></button>
+<body>
+    <p id="title-name" onmouseover="style.color='#f4511e'" onmouseout="style.color='black'">Sudoku <br>&nbsp; Game</p>
+    <!-- 按钮 -->
+    <div id="buttons">
 
-    <button  id="button1" class="submitbtn" onclick="notHave()"><span>登录</span></button>
-    <button  id="button2" class="submitbtn" onclick="notHave()"><span>查看排名</span></button>
-    <button  id="button3" class="submitbtn" onclick="stop()"><span>暂停</span></button>
-  </div>
-  
-  <!-- 九宫盘 -->
-  <div id="container">
-    <div id="chess-board"></div>
-  </div>
+        <button id="inner_btn" class="submitbtn" style="vertical-align:middle"
+            onclick="startNew()"><span>新游戏</span></button>
+        <form id="inner_btn" action="" method="POST" onchange="getDifficulty()">
+            <select id="diff_form" name="difficulty">
+                <option value="Easy">Easy</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Hard">Hard</option>
+                <option value="Evil">Evil</option>
+            </select>
+        </form>
+        <button id="inner_btn" class="submitbtn" style="vertical-align:middle"
+            onclick="checkResult()"><span>提交</span></button>
+        <button id="inner_btn" class="submitbtn" style="vertical-align:middle"
+            onclick="reset()"><span>重置</span></button>
+        <button id="inner_btn" class="submitbtn" style="vertical-align:middle"
+            onclick="getAnswer()"><span>答案</span></button>
 
-  <p id="timetext">00:00</p>
+        <button id="button1" class="submitbtn" onclick="notHave()"><span>登录</span></button>
+        <button id="button2" class="submitbtn" onclick="notHave()"><span>查看排名</span></button>
+        <button id="button3" class="submitbtn" onclick="stop()"><span>暂停</span></button>
+    </div>
 
-  <script>
-    function notHave(){
-      alert("尚未开通此功能");
-    }
-  </script>
+    <!-- 九宫盘 -->
+    <div id="container">
+        <div id="chess-board"></div>
+    </div>
 
-  <!-- 测试 -->
-  <p id="demo0"></p>
-  <p id="demo"></p>
-  <p id="demo2"></p>
-  <p id="demo3"></p>
+    <p id="timetext">00:00</p>
 
-<!-- 初始化 -->
-<script>
-  initializePage();
-  init();
-</script>
+    <script>
+        function notHave() {
+            alert("尚未开通此功能");
+        }
+    </script>
 
-<!-- 界面特效 -->
-<script src="canvas-nest.js-master/dist/canvas-nest.js"></script>
-<script src="click.js"></script>
+    <!-- 测试 -->
+    <p id="demo0"></p>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <!-- 初始化 -->
+    <script>
+        initializePage();
+        init();
+    </script>
+
+    <!-- 界面特效 -->
+    <script src="canvas-nest.js-master/dist/canvas-nest.js"></script>
+    <script src="click.js"></script>
 </body>
+
 </html>
