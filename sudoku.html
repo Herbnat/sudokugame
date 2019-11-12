@@ -18,7 +18,10 @@
 </head>
 
 <body>
-    <p id="title-name" onmouseover="style.color='#f4511e'" onmouseout="style.color='black'">Sudoku <br>&nbsp; Game</p>
+    <a href="https://baike.baidu.com/item/%E6%95%B0%E7%8B%AC/74847?fr=aladdin" target="_blank">
+        <p id="title-name" onmouseover="style.color='#f4511e'" onmouseout="style.color='black'">Sudoku <br>&nbsp; Game
+        </p>
+    </a>
     <!-- 按钮 -->
     <div id="buttons">
 
@@ -38,10 +41,14 @@
             onclick="reset()"><span>重置</span></button>
         <button id="inner_btn" class="submitbtn" style="vertical-align:middle"
             onclick="getAnswer()"><span>答案</span></button>
+        <button id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="stop()"><span>暂停</span></button>
 
-        <button id="button1" class="submitbtn" onclick="notHave()"><span>登录</span></button>
-        <button id="button2" class="submitbtn" onclick="notHave()"><span>查看排名</span></button>
-        <button id="button3" class="submitbtn" onclick="stop()"><span>暂停</span></button>
+        <button id="button1" class="submitbtn" onclick="notHave()"
+            style="background-color: #CE6D39"><span>登录</span></button>
+        <button id="button2" class="submitbtn" onclick="notHave()"
+            style="background-color: #CE6D39"><span>查看排名</span></button>
+        <button id="button3" class="submitbtn" onclick="notHave()"
+            style="background-color: #CE6D39"><span>保存进度</span></button>
     </div>
 
     <!-- 九宫盘 -->
