@@ -20,7 +20,7 @@ function checkResult() {
         for (var j = 0; j < 9; j++) {
             var check = isFinished(board, i, j, board[i][j]);
             if (check == false) {
-                alert("Answer Wrong!");
+                alert("Not complete!");
                 return;
             }
         }

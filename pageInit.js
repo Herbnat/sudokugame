@@ -16,12 +16,23 @@ function initializePage() {
 }
 
 function init() {
-    generateSudoku(board);
-    solve(board);
+    //generateSudoku(board);
+    //solve(board);
+    lasVegas(11);
     for (var i = 0; i < 9; i++) {
         answer[i] = [];
         Object.assign(answer[i], board[i]);
     }
+    //调试
+    // var txt = "";
+    // for (var i = 0; i < 9; i++) {
+    //     for (var j = 0; j < 9; j++) {
+    //         txt = txt + answer[i][j] + " ";
+    //     }
+    //     txt += "<br/>";
+    // }
+    // document.getElementById("demo0").innerHTML = txt;
+    //
     hideValue(board, 1);
     setValue(board);
     start();

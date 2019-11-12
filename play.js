@@ -57,7 +57,8 @@ function startNew() {
     //
     var buttons = document.getElementsByClassName("submitbtn");
     for (var i = 0; i < buttons.length; i++) {
-        buttons[i].style.backgroundColor = "#f4511e";
+        if (buttons[i].id == "inner_btn")
+            buttons[i].style.backgroundColor = "#f4511e";
     }
     //
     var a = window.confirm("Sure to start a new game?\n \nYour work will be clear!");
@@ -74,14 +75,25 @@ function startNew() {
         var mySelect = document.getElementById("diff_form");
         var diffMode = mySelect.options.selectedIndex;
 
-        generateSudoku(board);
-        solve(board);
+        //generateSudoku(board);
+        //solve(board);
+        lasVegas(11);
         //document.getElementById("demo2").innerHTML=board;
 
         for (var i = 0; i < 9; i++) {
             answer[i] = [];
             Object.assign(answer[i], board[i]);
         }
+        //调试
+        var txt = "";
+        for (var i = 0; i < 9; i++) {
+            for (var j = 0; j < 9; j++) {
+                txt = txt + answer[i][j] + " ";
+            }
+            txt += "<br/>";
+        }
+        document.getElementById("demo0").innerHTML = txt;
+        //
         //随机挖洞，传入难度参数
         hideValue(board, diffMode);
         //document.getElementById("demo3").innerHTML=board;
@@ -111,7 +123,7 @@ function getAnswer() {
         //
         var buttons = document.getElementsByClassName("submitbtn");
         for (var i = 0; i < buttons.length; i++) {
-            if (buttons[i].id != "new_btn" && buttons[i].id != "button1" && buttons[i].id != "button2") {
+            if (buttons[i].id == "inner_btn") {
                 buttons[i].style.backgroundColor = "grey";
             }
         }

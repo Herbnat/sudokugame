@@ -33,11 +33,11 @@ function generateBoard() {
 //生成二维board数组
 function getBoardArray() {
     var grid_rows = [].slice.call(document.querySelectorAll(".row"));
-    grid_rows.forEach(function(row, index) {
+    grid_rows.forEach(function (row, index) {
         var nums;
         board.push([]);
         row_cells = [].slice.call(row.children);
-        row_cells.forEach(function(num) {
+        row_cells.forEach(function (num) {
             board[index].push(num.value);
         });
     })
@@ -61,8 +61,7 @@ function getRandomNum() {
     return number;
 }
 
-//递归，根据第一行生成总的board
-//剪枝
+//递归，深度优先搜索求解board，被lasVegas()调用
 function solve(board) {
     for (var i = 0; i < board.length; i++) {
         for (var j = 0; j < board[0].length; j++) {
@@ -83,7 +82,27 @@ function solve(board) {
     }
     return true;
 }
-//根据难度挖不同数量的空
+//拉斯维加斯随机算法，先随机填充n个数（一般取11），然后调用solve求解其他空。不断调用lasVegas直到有正确解
+function lasVegas(n) {
+    var i, j;
+    for (i = 0; i < 9; i++)
+        for (j = 0; j < 9; j++)
+            board[i][j] = 0;
+    while (n) {
+        i = getRandomNum() - 1;
+        j = getRandomNum() - 1;
+        value = getRandomNum();
+        if (board[i][j] == 0)
+            if (isValid(board, i, j, value)) {
+                board[i][j] = value;
+                n--;
+            }
+    }
+    if (solve(board)) return true;
+    else return false;
+}
+
+//根据难度挖不同数量的空，每次挖空调用checkUnique()判断是否唯一，保证了解的唯一性
 function hideValue(board, diffMode) {
     var deleteNumber = 0;
     switch (diffMode) {
@@ -114,6 +133,24 @@ function hideValue(board, diffMode) {
             continue;
         }
     }
+}
+//要挖(i,j)时，循环判断1-9除了c的其他数填充到这里的话，solve()是否还会求出board的一种解
+//若所有值调用solve()返回true说明这个空挖掉的话解不唯一，应保留
+function checkUnique(i, j, c) {
+    var tmpBoard = [];
+    for (var i = 0; i < 9; i++) {
+        tmpBoard[i] = [];
+        Object.assign(tmpBoard[i], board[i]);
+    }
+    for (var t = 1; t <= 9; t++) {
+        if (t != c && isValid(tmpBoard, i, j, c)) {
+            tmpBoard[i][j] = t;
+            if (solve(tmpBoard))
+                return false;
+            tmpBoard[i][j] = "";
+        }
+    }
+    return true;
 }
 
 //根据board设置cell，并把给出值的设置为readOnly
