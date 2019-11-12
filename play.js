@@ -85,14 +85,14 @@ function startNew() {
             Object.assign(answer[i], board[i]);
         }
         //调试
-        var txt = "";
-        for (var i = 0; i < 9; i++) {
-            for (var j = 0; j < 9; j++) {
-                txt = txt + answer[i][j] + " ";
-            }
-            txt += "<br/>";
-        }
-        document.getElementById("demo0").innerHTML = txt;
+        // var txt = "";
+        // for (var i = 0; i < 9; i++) {
+        //     for (var j = 0; j < 9; j++) {
+        //         txt = txt + answer[i][j] + " ";
+        //     }
+        //     txt += "<br/>";
+        // }
+        // document.getElementById("demo0").innerHTML = txt;
         //
         //随机挖洞，传入难度参数
         hideValue(board, diffMode);
