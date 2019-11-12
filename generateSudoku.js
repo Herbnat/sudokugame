@@ -1,6 +1,7 @@
 //board存放生成的棋盘，answer存放答案，都是二维数组
 var board = [];
-var answer = [];//生成DOM，比在html文件里写很多内容要更方便，具体就是生成9x9的棋盘，每个单位的class="cell"
+var answer = [];
+//生成DOM，比在html文件里写很多内容要更方便，具体就是生成9x9的棋盘，每个单位的class="cell"
 function generateBoard() {
     for (var i = 0; i < 9; i++) {
         var node = document.createElement("div");
