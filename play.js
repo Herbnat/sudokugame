@@ -54,6 +54,12 @@ function startNew() {
     //清零STOP以及answering, 全局变量的设置一定要注意，否则有很多bug
     STOP = 0;
     answering = 0;
+    //
+    var buttons = document.getElementsByClassName("submitbtn");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.backgroundColor = "#f4511e";
+    }
+    //
     var a = window.confirm("Sure to start a new game?\n \nYour work will be clear!");
     if (a) {
         for (var i = 0; i < 9; i++) {
@@ -102,6 +108,14 @@ function getAnswer() {
             stop();
         }
         answering = 1;
+        //
+        var buttons = document.getElementsByClassName("submitbtn");
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].id != "new_btn" && buttons[i].id != "button1" && buttons[i].id != "button2") {
+                buttons[i].style.backgroundColor = "grey";
+            }
+        }
+        //
         var ele = document.getElementsByClassName("cell");
         var count = 0;
         //用之前保存的answer二维数组填充盘，且填充的颜色是蓝色
