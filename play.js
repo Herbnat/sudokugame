@@ -1,3 +1,10 @@
+/*
+主要操作模块，对应主界面的一系列按钮
+listenInput: 监听输入
+reset: 重置
+startNew: 新游戏
+getAnswer: 答案
+*/
 //代表有没有放弃游戏生成答案
 var answering = 0;
 //等待输入

@@ -1,3 +1,6 @@
+/*
+计时模块
+*/
 var minute, second; //分 秒
 minute = second = 0; //初始化
 var STOP = 0;

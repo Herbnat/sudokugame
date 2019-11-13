@@ -1,3 +1,12 @@
+/*
+游戏生成模块
+genarateBoard: 初始化九宫格
+getBoardArray: 生成二维board数组
+solve: DFS求解数独
+lasVegas: 拉斯维加斯随机算法生成数独
+hideValue: 根据难度挖空，保证唯一解
+setValue: 给每个input cell设置生成的board中的值，设置颜色和readOnly属性
+*/
 //board存放生成的棋盘，answer存放答案，都是二维数组
 var board = [];
 var answer = [];

@@ -1,3 +1,7 @@
+/*
+初始化模块
+页面加载时只调用这两个函数
+*/
 //初始化界面，给每个cell添加坐标属性(name = "" + row + col)
 function initializePage() {
     generateBoard();

@@ -1,3 +1,7 @@
+/*
+判断模块
+根据数独规则判断正确性，返回bool值
+*/
 //检查如果(row,col)放入c，是否符合规则
 function isValid(board, row, col, c) {
     if (board[row][col] == c) return true;
