@@ -61,15 +61,15 @@ function startNew() {
     //清零STOP以及answering, 全局变量的设置一定要注意，否则有很多bug
     STOP = 0;
     answering = 0;
-    //
-    var buttons = document.getElementsByClassName("submitbtn");
-    for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i].id == "inner_btn")
-            buttons[i].style.backgroundColor = "#f4511e";
-    }
-    //
     var a = window.confirm("Sure to start a new game?\n \nYour work will be clear!");
     if (a) {
+        //
+        var buttons = document.getElementsByClassName("submitbtn");
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].id == "inner_btn")
+                buttons[i].style.backgroundColor = "#f4511e";
+        }
+        //
         for (var i = 0; i < 9; i++) {
             for (var j = 0; j < 9; j++)
                 board[i][j] = "";
