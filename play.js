@@ -60,13 +60,14 @@ function reset() {
 function startNew() {
     //清零STOP以及answering, 全局变量的设置一定要注意，否则有很多bug
     STOP = 0;
+    document.getElementById("stop_btn").innerHTML = "暂停";
     answering = 0;
     var a = window.confirm("Sure to start a new game?\n \nYour work will be clear!");
     if (a) {
         //
         var buttons = document.getElementsByClassName("submitbtn");
         for (var i = 0; i < buttons.length; i++) {
-            if (buttons[i].id == "inner_btn")
+            if (buttons[i].id == "inner_btn" || buttons[i].id == "stop_btn")
                 buttons[i].style.backgroundColor = "#f4511e";
         }
         //
@@ -130,7 +131,7 @@ function getAnswer() {
         //
         var buttons = document.getElementsByClassName("submitbtn");
         for (var i = 0; i < buttons.length; i++) {
-            if (buttons[i].id == "inner_btn") {
+            if (buttons[i].id == "inner_btn" || buttons[i].id == "stop_btn") {
                 buttons[i].style.backgroundColor = "grey";
             }
         }

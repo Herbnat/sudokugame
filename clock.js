@@ -27,9 +27,11 @@ function stop() {
     if (STOP == 0) {
         clearInterval(int);
         STOP = 1;
+        document.getElementById("stop_btn").innerHTML = "继续";
     } else {
         int = setInterval(timer, 1000);
         STOP = 0;
+        document.getElementById("stop_btn").innerHTML = "暂停";
     }
 }
 

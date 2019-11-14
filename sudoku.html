@@ -43,7 +43,8 @@
             onclick="reset()"><span>重置</span></button>
         <button id="inner_btn" class="submitbtn" style="vertical-align:middle"
             onclick="getAnswer()"><span>答案</span></button>
-        <button id="inner_btn" class="submitbtn" style="vertical-align:middle" onclick="stop()"><span>暂停</span></button>
+        <button id="stop_btn" class="submitbtn" style="vertical-align:middle" 
+            onclick="stop()"><span>暂停</span></button>
 
         <button id="button1" class="submitbtn" onclick="notHave()"
             style="background-color: #CE6D39"><span>登录</span></button>
@@ -74,6 +75,7 @@
 
     <!-- 初始化 -->
     <script>
+        document.getElementById("stop_btn").innerHTML = "暂停";
         initializePage();
         init();
     </script>
